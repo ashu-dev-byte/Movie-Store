@@ -1,7 +1,22 @@
 const express = require("express");
 const { graphqlHTTP } = require("express-graphql");
-const schema = require("./schema/schema");
+const mongoose = require("mongoose");
+const schema = require("./models/schema");
+require("dotenv").config();
 const app = express();
+
+// =========== Mongoose Configuration ==================
+mongoose.connect(process.env.HOSTED_DBURL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+});
+
+mongoose.connection.once("open", () => {
+  console.log("Successfully conneted to cloud database.");
+});
+// =========== Mongoose Configuration End ==============
 
 app.use(
   "/graphql",
