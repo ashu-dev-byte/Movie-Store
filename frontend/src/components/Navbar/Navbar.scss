@@ -1,0 +1,47 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 99.9vw;
+  height: 60px;
+  background-color: rgb(200, 230, 215);
+  border: 0.1px solid transparent;
+}
+
+.leftSide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bars {
+  margin-left: 1rem;
+  color: rgb(60, 60, 60);
+  cursor: pointer;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+
+  h2 {
+    margin-right: 0.4rem;
+    color: black;
+  }
+}
+
+.rightSide {
+  margin-right: 2rem;
+
+  ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+    li {
+      font-size: 1.5rem;
+      padding: 0.1rem 1rem;
+    }
+  }
+}

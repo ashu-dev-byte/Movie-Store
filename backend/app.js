@@ -2,8 +2,12 @@ const express = require("express");
 const { graphqlHTTP } = require("express-graphql");
 const mongoose = require("mongoose");
 const schema = require("./models/schema");
+const cors = require("cors");
 require("dotenv").config();
 const app = express();
+
+// =========== Allow cross-origin requests
+app.use(cors());
 
 // =========== Mongoose Configuration ==================
 mongoose.connect(process.env.HOSTED_DBURL, {

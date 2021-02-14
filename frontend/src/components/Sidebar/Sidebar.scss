@@ -1,0 +1,24 @@
+.sidebar {
+  width: 16rem;
+  height: 93.5vh;
+  background-color: lightcoral;
+  border: 0.1px solid transparent;
+
+  p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 1.4rem;
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+
+    &:nth-child(1) {
+      margin-top: 4rem;
+    }
+
+    span {
+      margin-left: 1rem;
+    }
+  }
+}

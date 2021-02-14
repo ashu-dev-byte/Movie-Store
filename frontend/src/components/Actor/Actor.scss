@@ -1,0 +1,16 @@
+.actor {
+  width: 98.5%;
+  background-color: rgb(174, 198, 226);
+  padding: 50px 20px;
+  border: 0.1px solid transparent;
+
+  span {
+    font-size: 1rem;
+  }
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}

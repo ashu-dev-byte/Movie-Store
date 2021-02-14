@@ -1,0 +1,15 @@
+.content {
+  width: 100%;
+  background-color: rgb(226, 174, 189);
+  border: 0.1px solid transparent;
+  padding: 50px 20px;
+
+  span {
+    font-size: 1rem;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+}

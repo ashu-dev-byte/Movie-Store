@@ -1,0 +1,15 @@
+.studio {
+  width: 98.5%;
+  background-color: rgb(133, 124, 173);
+  border: 0.1px solid transparent;
+  padding: 50px 20px;
+
+  span {
+    font-size: 1rem;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+}
