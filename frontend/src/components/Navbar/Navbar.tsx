@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { FaBars, FaStore } from "react-icons/fa";
 import "./Navbar.scss";
 
@@ -16,7 +17,9 @@ const Navbar: React.FC<Props> = (props) => {
       </div>
       <div className="rightSide">
         <ul>
-          <li>Home</li>
+          <NavLink className="navStyle" to="/">
+            <li>Home</li>
+          </NavLink>
           <li>Recent</li>
           <li>Contact</li>
           <li>About</li>
@@ -27,37 +30,3 @@ const Navbar: React.FC<Props> = (props) => {
 };
 
 export default Navbar;
-
-/*
-import React from "react";
-import { useQuery, gql } from "@apollo/client";
-import "./Content.scss";
-
-const CONTENT_LIST_QUERY = gql`
-  query getContentList {
-    contents {
-      name
-      yearOfRelease
-      boxOfficeStatus
-    }
-  }
-`;
-
-interface Props {}
-
-const Content: React.FC<Props> = (props) => {
-  const { loading, error, data } = useQuery(CONTENT_LIST_QUERY);
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error!!</p>;
-
-  return (
-    <div>
-      <span>Hello</span>
-    </div>
-  );
-};
-
-export default Content;
-
-*/

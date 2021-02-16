@@ -1,11 +1,17 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
+import Home from "./components/Home/Home";
 import Content from "./components/Content/Content";
 import Actor from "./components/Actor/Actor";
 import Director from "./components/Director/Director";
 import Studio from "./components/Studio/Studio";
+import AddActor from "./components/Actor/AddActor";
+import AddContent from "./components/Content/AddContent";
+import AddDirector from "./components/Director/AddDirector";
+import AddStudio from "./components/Studio/AddStudio";
 import "./App.scss";
 
 const client = new ApolloClient({
@@ -16,13 +22,25 @@ const client = new ApolloClient({
 const App = () => {
   return (
     <ApolloProvider client={client}>
-      <div className="app">
-        <Navbar />
-        <div className="main">
-          <Sidebar />
-          <Content />
+      <Router>
+        <div className="app">
+          <Navbar />
+          <div className="main">
+            <Sidebar />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/contents" component={Content} />
+              <Route exact path="/actors" component={Actor} />
+              <Route exact path="/directors" component={Director} />
+              <Route exact path="/studios" component={Studio} />
+              <Route path="/add/content" component={AddContent} />
+              <Route exact path="/add/actor" component={AddActor} />
+              <Route exact path="/add/director" component={AddDirector} />
+              <Route exact path="/add/studio" component={AddStudio} />
+            </Switch>
+          </div>
         </div>
-      </div>
+      </Router>
     </ApolloProvider>
   );
 };

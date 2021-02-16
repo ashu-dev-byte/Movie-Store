@@ -1,6 +1,7 @@
 .sidebar {
-  width: 16rem;
-  height: 93.5vh;
+  width: 350px;
+  height: 789px;
+  padding: 4rem 2rem;
   background-color: lightcoral;
   border: 0.1px solid transparent;
 
@@ -8,17 +9,26 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-left: 1.4rem;
+    margin: 2rem 1rem;
     font-size: 2rem;
     font-weight: 400;
     text-align: center;
-
-    &:nth-child(1) {
-      margin-top: 4rem;
-    }
 
     span {
       margin-left: 1rem;
     }
   }
+}
+
+.navStyle {
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.partition {
+  height: 175px;
 }
