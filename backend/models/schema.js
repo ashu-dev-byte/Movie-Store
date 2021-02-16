@@ -198,6 +198,7 @@ const Mutation = new GraphQLObjectType({
         return newContent.save();
       },
     },
+
     addActor: {
       type: ActorType,
       args: {
@@ -216,6 +217,7 @@ const Mutation = new GraphQLObjectType({
         return newActor.save();
       },
     },
+
     addDirector: {
       type: DirectorType,
       args: {
@@ -234,6 +236,7 @@ const Mutation = new GraphQLObjectType({
         return newDirector.save();
       },
     },
+
     addStudio: {
       type: StudioType,
       args: {

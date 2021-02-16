@@ -1,5 +1,20 @@
 import React, { useState } from "react";
+import { useMutation, gql } from "@apollo/client";
 import "./Actor.scss";
+
+const ADD_ACTOR_MUTATION = gql`
+  mutation addNewActor(
+    $name: String!
+    $age: Int!
+    $gender: String!
+    $country: String!
+  ) {
+    addActor(name: $name, age: $age, gender: $gender, country: $country) {
+      id
+      name
+    }
+  }
+`;
 
 interface Props {}
 
@@ -11,10 +26,12 @@ const AddActor: React.FC<Props> = (props) => {
     country: "",
   });
 
+  const [addNewActor] = useMutation(ADD_ACTOR_MUTATION);
+
   const formSubmitHandler = (event: { preventDefault: () => void }) => {
-    console.log("Form Data: ", formData);
-    setFormData({ name: "", age: "", gender: "", country: "" });
     event.preventDefault();
+    addNewActor({ variables: { ...formData, age: parseInt(formData.age) } });
+    setFormData({ name: "", age: "", gender: "", country: "" });
   };
 
   return (
@@ -46,8 +63,8 @@ const AddActor: React.FC<Props> = (props) => {
             <input
               type="radio"
               name="gender"
-              value="male"
-              checked={formData.gender === "male"}
+              value="Male"
+              checked={formData.gender === "Male"}
               onChange={(e) =>
                 setFormData({ ...formData, gender: e.target.value })
               }
@@ -56,8 +73,8 @@ const AddActor: React.FC<Props> = (props) => {
             <input
               type="radio"
               name="gender"
-              value="female"
-              checked={formData.gender === "female"}
+              value="Female"
+              checked={formData.gender === "Female"}
               onChange={(e) =>
                 setFormData({ ...formData, gender: e.target.value })
               }
@@ -66,8 +83,8 @@ const AddActor: React.FC<Props> = (props) => {
             <input
               type="radio"
               name="gender"
-              value="other"
-              checked={formData.gender === "other"}
+              value="Other"
+              checked={formData.gender === "Other"}
               onChange={(e) =>
                 setFormData({ ...formData, gender: e.target.value })
               }

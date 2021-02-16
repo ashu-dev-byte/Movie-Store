@@ -6,7 +6,10 @@ import "./Actor.scss";
 const ACTOR_LIST_QUERY = gql`
   query getActorList {
     actors {
+      id
       name
+      age
+      gender
       country
     }
   }
@@ -23,7 +26,13 @@ const Actor: React.FC<Props> = (props) => {
     <div className="actor">
       <div className="container">
         {data.actors.map((actor: any) => (
-          <Card name={actor.name} country={actor.country} />
+          <Card
+            key={actor.id}
+            name={actor.name}
+            age={actor.age}
+            gender={actor.gender}
+            country={actor.country}
+          />
         ))}
       </div>
     </div>
