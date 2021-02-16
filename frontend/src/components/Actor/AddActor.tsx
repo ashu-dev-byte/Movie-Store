@@ -8,8 +8,9 @@ const AddActor: React.FC<Props> = (props) => {
 
   return (
     <div className="addActor">
-      <h2>Add Actor</h2>
       <form action="" className="formContainer">
+        <h2>Add Actor</h2>
+
         <div className="fieldItem">
           <label htmlFor="">Name:</label>
           <input type="text" />
