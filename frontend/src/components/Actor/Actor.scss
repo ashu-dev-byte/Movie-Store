@@ -30,7 +30,19 @@
   width: 30%;
   margin-top: 4rem;
   padding: 3rem 1rem;
+  border-radius: 16px;
   background-color: rgb(103, 140, 184);
+
+  input {
+    border: none;
+    height: 2rem;
+    margin-top: 5px;
+    border-radius: 5px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
 }
 
 .fieldItem {
@@ -42,7 +54,9 @@
 
   button {
     height: 40px;
+    border: none;
     cursor: pointer;
+    border-radius: 5px;
   }
 }
 
