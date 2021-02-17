@@ -3,9 +3,10 @@ import { useQuery, gql } from "@apollo/client";
 import Card from "../Card/Card";
 import "./Studio.scss";
 
-const STUDIO_LIST_QUERY = gql`
+export const STUDIO_LIST_QUERY = gql`
   query getStudioList {
     studios {
+      id
       name
       country
     }
@@ -21,9 +22,9 @@ const Studio: React.FC<Props> = (props) => {
   if (error) return <p>Error!!</p>;
   return (
     <div className="studio">
-      <div className="container">
+      <div className="containerStudio">
         {data.studios.map((studio: any) => (
-          <Card name={studio.name} country={studio.country} />
+          <Card key={studio.id} name={studio.name} country={studio.country} />
         ))}
       </div>
     </div>

@@ -1,5 +1,5 @@
 .actor {
-  width: 98.5%;
+  width: 1575px;
   background-color: rgb(174, 198, 226);
   padding: 50px 20px;
   border: 0.1px solid transparent;
@@ -9,7 +9,7 @@
   }
 }
 
-.container {
+.containerActor {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -22,7 +22,7 @@
   background-color: rgb(174, 198, 226);
 }
 
-.formContainer {
+.formContainerActor {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,7 +46,7 @@
   }
 }
 
-.fieldItem {
+.fieldItemActor {
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -62,7 +62,7 @@
   }
 }
 
-.radioItems {
+.radioItemsActor {
   display: flex;
   justify-content: flex-start;
   align-items: center;

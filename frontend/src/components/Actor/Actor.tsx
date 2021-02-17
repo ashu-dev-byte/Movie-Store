@@ -3,7 +3,7 @@ import { useQuery, gql } from "@apollo/client";
 import Card from "../Card/Card";
 import "./Actor.scss";
 
-const ACTOR_LIST_QUERY = gql`
+export const ACTOR_LIST_QUERY = gql`
   query getActorList {
     actors {
       id
@@ -24,7 +24,7 @@ const Actor: React.FC<Props> = (props) => {
   if (error) return <p>Error!!</p>;
   return (
     <div className="actor">
-      <div className="container">
+      <div className="containerActor">
         {data.actors.map((actor: any) => (
           <Card
             key={actor.id}

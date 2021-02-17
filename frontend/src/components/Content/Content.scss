@@ -1,5 +1,5 @@
 .content {
-  width: 100%;
+  width: 1575;
   background-color: rgb(226, 174, 189);
   border: 0.1px solid transparent;
   padding: 50px 20px;
@@ -9,7 +9,106 @@
   }
 }
 
-.container {
+.containerContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.addContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(226, 174, 189);
+}
+
+.formContainerContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+.formContentParent {
+  display: flex;
+  width: 90%;
+}
+
+.formContentLeft,
+.formContentRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+  margin-left: -2rem;
+  padding: 3rem 1rem;
+  border-radius: 16px;
+  background-color: rgb(224, 114, 145);
+
+  input {
+    border: none;
+    height: 2rem;
+    outline: none;
+    margin-top: 5px;
+    border-radius: 5px;
+  }
+}
+
+.fieldItemContent {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  margin: 0.6rem;
+
+  button {
+    height: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 2rem;
+    border-radius: 5px;
+  }
+
+  .customSelect {
+    border: none;
+    height: 2rem;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-radius: 5px;
+  }
+
+  .basicSingle {
+  }
+
+  .multiSelectCheckboxes {
+    width: 336px;
+
+    input[type="text"] {
+      height: 20px;
+      font-size: 18px !important;
+    }
+  }
+}
+
+.radioItemsContent {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
+
+  input[type="radio"] {
+    cursor: pointer;
+  }
+
+  label {
+    margin-right: 1rem;
+  }
 }

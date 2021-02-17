@@ -3,10 +3,13 @@ import { useQuery, gql } from "@apollo/client";
 import Card from "../Card/Card";
 import "./Director.scss";
 
-const DIRECTOR_LIST_QUERY = gql`
+export const DIRECTOR_LIST_QUERY = gql`
   query getDirectorList {
     directors {
+      id
       name
+      age
+      gender
       country
     }
   }
@@ -22,9 +25,15 @@ const Director: React.FC<Props> = (props) => {
 
   return (
     <div className="director">
-      <div className="container">
+      <div className="containerDirector">
         {data.directors.map((director: any) => (
-          <Card name={director.name} country={director.country} />
+          <Card
+            key={director.id}
+            name={director.name}
+            age={director.age}
+            gender={director.gender}
+            country={director.country}
+          />
         ))}
       </div>
     </div>

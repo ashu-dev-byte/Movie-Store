@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useMutation, gql } from "@apollo/client";
+import { ACTOR_LIST_QUERY } from "./Actor";
 import "./Actor.scss";
 
 const ADD_ACTOR_MUTATION = gql`
@@ -30,16 +31,19 @@ const AddActor: React.FC<Props> = (props) => {
 
   const formSubmitHandler = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    addNewActor({ variables: { ...formData, age: parseInt(formData.age) } });
+    addNewActor({
+      variables: { ...formData, age: parseInt(formData.age) },
+      refetchQueries: [{ query: ACTOR_LIST_QUERY }],
+    });
     setFormData({ name: "", age: "", gender: "", country: "" });
   };
 
   return (
     <div className="addActor">
-      <form className="formContainer" onSubmit={formSubmitHandler}>
+      <form className="formContainerActor" onSubmit={formSubmitHandler}>
         <h2>Add Actor</h2>
 
-        <div className="fieldItem">
+        <div className="fieldItemActor">
           <label htmlFor="">Name:</label>
           <input
             type="text"
@@ -48,7 +52,7 @@ const AddActor: React.FC<Props> = (props) => {
           />
         </div>
 
-        <div className="fieldItem">
+        <div className="fieldItemActor">
           <label htmlFor="">Age:</label>
           <input
             type="text"
@@ -57,9 +61,9 @@ const AddActor: React.FC<Props> = (props) => {
           />
         </div>
 
-        <div className="fieldItem">
+        <div className="fieldItemActor">
           <label htmlFor="">Gender:</label>
-          <div className="radioItems">
+          <div className="radioItemsActor">
             <input
               type="radio"
               name="gender"
@@ -93,7 +97,7 @@ const AddActor: React.FC<Props> = (props) => {
           </div>
         </div>
 
-        <div className="fieldItem">
+        <div className="fieldItemActor">
           <label htmlFor="">Country:</label>
           <input
             type="text"
@@ -104,7 +108,7 @@ const AddActor: React.FC<Props> = (props) => {
           />
         </div>
 
-        <div className="fieldItem">
+        <div className="fieldItemActor">
           <button type="submit">Submit</button>
         </div>
       </form>

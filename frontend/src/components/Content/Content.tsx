@@ -3,11 +3,18 @@ import { useQuery, gql } from "@apollo/client";
 import Card from "../Card/Card";
 import "./Content.scss";
 
-const CONTENT_LIST_QUERY = gql`
+export const CONTENT_LIST_QUERY = gql`
   query getContentList {
     contents {
+      id
       name
+      contentCategory
+      yearOfRelease
       country
+      budget
+      boxOfficeCollection
+      boxOfficeStatus
+      genre
     }
   }
 `;
@@ -22,9 +29,19 @@ const Content: React.FC<Props> = (props) => {
 
   return (
     <div className="content">
-      <div className="container">
+      <div className="containerContent">
         {data.contents.map((content: any) => (
-          <Card name={content.name} country={content.country} />
+          <Card
+            key={content.id}
+            name={content.name}
+            contentCategory={content.contentCategory}
+            yearOfRelease={content.yearOfRelease}
+            country={content.country}
+            budget={content.budget}
+            boxOfficeCollection={content.boxOfficeCollection}
+            boxOfficeStatus={content.boxOfficeStatus}
+            genre={content.genre}
+          />
         ))}
       </div>
     </div>
