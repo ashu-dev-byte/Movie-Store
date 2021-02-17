@@ -4,14 +4,14 @@ import "./Card.scss";
 interface Props {
   name: string;
   age?: string;
+  gender?: string;
+  country?: string;
   contentCategory?: string;
   yearOfRelease?: number;
   budget?: number;
   boxOfficeCollection?: number;
   boxOfficeStatus?: string;
   genre?: Array<string>;
-  gender?: string;
-  country: string;
   imgUrl?: string;
 }
 
@@ -46,10 +46,12 @@ const Card: React.FC<Props> = ({
           {yearOfRelease}
         </p>
       )}
-      <p>
-        <b>Country: </b>
-        {country}
-      </p>
+      {!!country && (
+        <p>
+          <b>Country: </b>
+          {country}
+        </p>
+      )}
       {!!budget && (
         <p>
           <b>Budget: </b>

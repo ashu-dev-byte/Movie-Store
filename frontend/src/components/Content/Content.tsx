@@ -34,12 +34,12 @@ const Content: React.FC<Props> = (props) => {
           <Card
             key={content.id}
             name={content.name}
-            contentCategory={content.contentCategory}
+            // contentCategory={content.contentCategory}
             yearOfRelease={content.yearOfRelease}
-            country={content.country}
-            budget={content.budget}
-            boxOfficeCollection={content.boxOfficeCollection}
-            boxOfficeStatus={content.boxOfficeStatus}
+            // country={content.country}
+            // budget={content.budget}
+            // boxOfficeCollection={content.boxOfficeCollection}
+            // boxOfficeStatus={content.boxOfficeStatus}
             genre={content.genre}
           />
         ))}
