@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
+import { NavLink } from "react-router-dom";
 import Card from "../Card/Card";
 import "./Studio.scss";
 
@@ -24,7 +25,9 @@ const Studio: React.FC<Props> = (props) => {
     <div className="studio">
       <div className="containerStudio">
         {data.studios.map((studio: any) => (
-          <Card key={studio.id} name={studio.name} country={studio.country} />
+          <NavLink className="navLinkStudio" to={`/studio/${studio.id}`}>
+            <Card key={studio.id} name={studio.name} country={studio.country} />
+          </NavLink>
         ))}
       </div>
     </div>

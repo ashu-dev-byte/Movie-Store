@@ -12,6 +12,10 @@ import AddActor from "./components/Actor/AddActor";
 import AddContent from "./components/Content/AddContent";
 import AddDirector from "./components/Director/AddDirector";
 import AddStudio from "./components/Studio/AddStudio";
+import ContentDetails from "./components/Content/ContentDetails";
+import ActorDetails from "./components/Actor/ActorDetails";
+import DirectorDetails from "./components/Director/DirectorDetails";
+import StudioDetails from "./components/Studio/StudioDetails";
 import "./App.scss";
 
 const client = new ApolloClient({
@@ -33,10 +37,14 @@ const App = () => {
               <Route exact path="/actors" component={Actor} />
               <Route exact path="/directors" component={Director} />
               <Route exact path="/studios" component={Studio} />
-              <Route path="/add/content" component={AddContent} />
+              <Route exact path="/add/content" component={AddContent} />
               <Route exact path="/add/actor" component={AddActor} />
               <Route exact path="/add/director" component={AddDirector} />
               <Route exact path="/add/studio" component={AddStudio} />
+              <Route path="/content/:contentId" component={ContentDetails} />
+              <Route path="/actor/:actorId" component={ActorDetails} />
+              <Route path="/director/:directorId" component={DirectorDetails} />
+              <Route path="/studio/:studioId" component={StudioDetails} />
             </Switch>
           </div>
         </div>

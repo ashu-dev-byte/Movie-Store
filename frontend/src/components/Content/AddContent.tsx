@@ -142,10 +142,12 @@ const AddContent: React.FC<Props> = (props) => {
 
   useEffect(() => {
     if (!actorDataLoading) {
-      actorData.actors.map((actor) => {
+      actorData.actors.map((actor: { id: string; name: string }) => {
         actorList.push({ value: actor.id, label: actor.name });
       });
     }
+
+    console.log("ActorList", actorList);
   }, [actorList]);
 
   useEffect(() => {

@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
+import { NavLink } from "react-router-dom";
 import Card from "../Card/Card";
 import "./Director.scss";
 
@@ -27,13 +28,15 @@ const Director: React.FC<Props> = (props) => {
     <div className="director">
       <div className="containerDirector">
         {data.directors.map((director: any) => (
-          <Card
-            key={director.id}
-            name={director.name}
-            age={director.age}
-            gender={director.gender}
-            country={director.country}
-          />
+          <NavLink className="navLinkDirector" to={`/director/${director.id}`}>
+            <Card
+              key={director.id}
+              name={director.name}
+              age={director.age}
+              gender={director.gender}
+              country={director.country}
+            />
+          </NavLink>
         ))}
       </div>
     </div>

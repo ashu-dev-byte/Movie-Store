@@ -11,13 +11,12 @@ const {
   GraphQLString,
   GraphQLFloat,
   GraphQLInt,
-  GraphQLID,
 } = graphql;
 
 const ContentType = new GraphQLObjectType({
   name: "Content",
   fields: () => ({
-    id: { type: GraphQLID },
+    id: { type: GraphQLString },
     name: { type: GraphQLString },
     contentCategory: { type: GraphQLString },
     yearOfRelease: { type: GraphQLInt },
@@ -51,7 +50,7 @@ const ContentType = new GraphQLObjectType({
 const ActorType = new GraphQLObjectType({
   name: "Actor",
   fields: () => ({
-    id: { type: GraphQLID },
+    id: { type: GraphQLString },
     name: { type: GraphQLString },
     gender: { type: GraphQLString },
     age: { type: GraphQLInt },
@@ -69,7 +68,7 @@ const ActorType = new GraphQLObjectType({
 const DirectorType = new GraphQLObjectType({
   name: "Director",
   fields: () => ({
-    id: { type: GraphQLID },
+    id: { type: GraphQLString },
     name: { type: GraphQLString },
     gender: { type: GraphQLString },
     age: { type: GraphQLInt },
@@ -86,7 +85,7 @@ const DirectorType = new GraphQLObjectType({
 const StudioType = new GraphQLObjectType({
   name: "Studio",
   fields: () => ({
-    id: { type: GraphQLID },
+    id: { type: GraphQLString },
     name: { type: GraphQLString },
     country: { type: GraphQLString },
     contents: {
@@ -103,9 +102,9 @@ const RootQuery = new GraphQLObjectType({
   fields: {
     content: {
       type: ContentType,
-      args: { id: { type: GraphQLID } },
+      args: { id: { type: GraphQLString } },
       resolve(parent, args) {
-        return Content.findOne({ _id: args._id });
+        return Content.findOne({ _id: args.id });
       },
     },
 
@@ -118,9 +117,9 @@ const RootQuery = new GraphQLObjectType({
 
     director: {
       type: DirectorType,
-      args: { id: { type: GraphQLID } },
+      args: { id: { type: GraphQLString } },
       resolve(parent, args) {
-        return Director.findOne({ _id: args._id });
+        return Director.findOne({ _id: args.id });
       },
     },
 
@@ -133,9 +132,9 @@ const RootQuery = new GraphQLObjectType({
 
     studio: {
       type: StudioType,
-      args: { id: { type: GraphQLID } },
+      args: { id: { type: GraphQLString } },
       resolve(parent, args) {
-        return Studio.findOne({ _id: args._id });
+        return Studio.findOne({ _id: args.id });
       },
     },
 
@@ -148,9 +147,9 @@ const RootQuery = new GraphQLObjectType({
 
     actor: {
       type: ActorType,
-      args: { id: { type: GraphQLID } },
+      args: { id: { type: GraphQLString } },
       resolve(parent, args) {
-        return Actor.findOne({ _id: args._id });
+        return Actor.findOne({ _id: args.id });
       },
     },
 

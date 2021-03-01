@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
+import { NavLink } from "react-router-dom";
 import Card from "../Card/Card";
 import "./Actor.scss";
 
@@ -22,17 +23,20 @@ const Actor: React.FC<Props> = (props) => {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error!!</p>;
+
   return (
     <div className="actor">
       <div className="containerActor">
         {data.actors.map((actor: any) => (
-          <Card
-            key={actor.id}
-            name={actor.name}
-            age={actor.age}
-            gender={actor.gender}
-            country={actor.country}
-          />
+          <NavLink className="navLinkActor" to={`/actor/${actor.id}`}>
+            <Card
+              key={actor.id}
+              name={actor.name}
+              age={actor.age}
+              gender={actor.gender}
+              country={actor.country}
+            />
+          </NavLink>
         ))}
       </div>
     </div>

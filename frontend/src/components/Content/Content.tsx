@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
+import { NavLink } from "react-router-dom";
 import Card from "../Card/Card";
 import "./Content.scss";
 
@@ -31,17 +32,19 @@ const Content: React.FC<Props> = (props) => {
     <div className="content">
       <div className="containerContent">
         {data.contents.map((content: any) => (
-          <Card
-            key={content.id}
-            name={content.name}
-            // contentCategory={content.contentCategory}
-            yearOfRelease={content.yearOfRelease}
-            // country={content.country}
-            // budget={content.budget}
-            // boxOfficeCollection={content.boxOfficeCollection}
-            // boxOfficeStatus={content.boxOfficeStatus}
-            genre={content.genre}
-          />
+          <NavLink className="navLinkActor" to={`/content/${content.id}`}>
+            <Card
+              key={content.id}
+              name={content.name}
+              // contentCategory={content.contentCategory}
+              yearOfRelease={content.yearOfRelease}
+              // country={content.country}
+              // budget={content.budget}
+              // boxOfficeCollection={content.boxOfficeCollection}
+              // boxOfficeStatus={content.boxOfficeStatus}
+              genre={content.genre}
+            />
+          </NavLink>
         ))}
       </div>
     </div>
