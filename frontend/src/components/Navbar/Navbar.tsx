@@ -10,10 +10,12 @@ const Navbar: React.FC<Props> = (props) => {
     <div className="navbar">
       <div className="leftSide">
         <FaBars size={32} className="bars" />
-        <div className="brand">
-          <h2>Movie Store</h2>
-          <FaStore size={28} />
-        </div>
+        <NavLink className="navLinkContent" to="/">
+          <div className="brand">
+            <h2>Movie Store</h2>
+            <FaStore size={28} />
+          </div>
+        </NavLink>
       </div>
       <div className="rightSide">
         <ul>
