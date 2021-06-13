@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  label {
+    cursor: pointer;
+  }
+}
+
+.container {
+  width: 370px;
+  padding: 8px;
+}
+
+.selectBox {
+  width: 350px;
+  border-radius: 8px;
+}
+
+.optionsList {
+  display: none;
+  width: 100%;
+  overflow: hidden;
+  color: #f5f6fa;
+  border-radius: 8px;
+  background-color: #2f3640;
+  transition: transform 0.5s;
+
+  &::-webkit-scrollbar {
+    width: 9px;
+    background-color: #0d141f;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #6c7075;
+    border-radius: 8px;
+  }
+}
+
+.option {
+  padding: 12px 24px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #414b57;
+  }
+}
+
+.optionsActive {
+  display: flex;
+  flex-direction: column;
+  max-height: 240px;
+  overflow-y: scroll;
+}
+
+.selected {
+  position: relative;
+  padding: 12px 24px;
+  cursor: pointer;
+  color: #f5f6fa;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  background-color: #2f3640;
+}
+
+.radioBtn {
+  display: none;
+}
+
+.icon {
+  position: absolute;
+  right: 10px;
+  transition: all 0.5s;
+}
+
+.iconActive {
+  transform: rotateZ(180deg);
+}

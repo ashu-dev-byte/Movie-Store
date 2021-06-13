@@ -17,6 +17,7 @@ import ActorDetails from "./components/Actor/ActorDetails";
 import DirectorDetails from "./components/Director/DirectorDetails";
 import StudioDetails from "./components/Studio/StudioDetails";
 import "./App.scss";
+import ReactSelect from "./components/Select/ReactSelect";
 
 const client = new ApolloClient({
   uri: "http://localhost:4001/graphql",
@@ -28,7 +29,8 @@ const App = () => {
     <ApolloProvider client={client}>
       <Router>
         <div className="app">
-          <Navbar />
+          <ReactSelect />
+          {/* <Navbar />
           <div className="main">
             <Sidebar />
             <Switch>
@@ -46,7 +48,7 @@ const App = () => {
               <Route path="/director/:directorId" component={DirectorDetails} />
               <Route path="/studio/:studioId" component={StudioDetails} />
             </Switch>
-          </div>
+          </div> */}
         </div>
       </Router>
     </ApolloProvider>
