@@ -29,8 +29,8 @@ const App = () => {
     <ApolloProvider client={client}>
       <Router>
         <div className="app">
-          <ReactSelect />
-          {/* <Navbar />
+          {/* <ReactSelect /> */}
+          <Navbar />
           <div className="main">
             <Sidebar />
             <Switch>
@@ -48,7 +48,7 @@ const App = () => {
               <Route path="/director/:directorId" component={DirectorDetails} />
               <Route path="/studio/:studioId" component={StudioDetails} />
             </Switch>
-          </div> */}
+          </div>
         </div>
       </Router>
     </ApolloProvider>
